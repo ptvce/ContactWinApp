@@ -11,7 +11,7 @@ namespace ContactWinApp.Service
 {
     class ContactRepository : IContactRepository
     {
-        private string connectionString = "DataSource=.;Initial Catalog=Contact_DB;Integrated Security=true";
+        private string connectionString = "Data Source=.;Initial Catalog=Contact_DB;Integrated Security=true";
         public bool Delete(int contactId)
         {
             SqlConnection connection = new SqlConnection(connectionString);

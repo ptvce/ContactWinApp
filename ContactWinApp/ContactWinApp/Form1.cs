@@ -29,7 +29,7 @@ namespace ContactWinApp
         public void DataBind()
         {
             dgView.AutoGenerateColumns = false;
-            repository.SelectAll();
+            dgView.DataSource = repository.SelectAll();
         }
 
         private void Add_Click(object sender, EventArgs e)

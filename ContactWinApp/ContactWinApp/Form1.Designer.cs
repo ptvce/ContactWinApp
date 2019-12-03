@@ -34,6 +34,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgView = new System.Windows.Forms.DataGridView();
+            this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Family = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
@@ -89,13 +96,66 @@
             // 
             // dgView
             // 
+            this.dgView.AllowUserToAddRows = false;
+            this.dgView.AllowUserToDeleteRows = false;
             this.dgView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ContactID,
+            this.MyName,
+            this.Family,
+            this.Mobile,
+            this.Email,
+            this.Age,
+            this.Address});
             this.dgView.Location = new System.Drawing.Point(6, 22);
             this.dgView.Name = "dgView";
+            this.dgView.ReadOnly = true;
             this.dgView.RowTemplate.Height = 24;
             this.dgView.Size = new System.Drawing.Size(754, 332);
             this.dgView.TabIndex = 0;
+            // 
+            // ContactID
+            // 
+            this.ContactID.DataPropertyName = "ContactID";
+            this.ContactID.HeaderText = "کد";
+            this.ContactID.Name = "ContactID";
+            // 
+            // MyName
+            // 
+            this.MyName.DataPropertyName = "Name";
+            this.MyName.HeaderText = "نام";
+            this.MyName.Name = "MyName";
+            // 
+            // Family
+            // 
+            this.Family.DataPropertyName = "Family";
+            this.Family.HeaderText = "نام خانوادگی";
+            this.Family.Name = "Family";
+            // 
+            // Mobile
+            // 
+            this.Mobile.DataPropertyName = "Mobile";
+            this.Mobile.HeaderText = "موبایل";
+            this.Mobile.Name = "Mobile";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "ایمیل";
+            this.Email.Name = "Email";
+            // 
+            // Age
+            // 
+            this.Age.DataPropertyName = "Age";
+            this.Age.HeaderText = "سن";
+            this.Age.Name = "Age";
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "آدرس";
+            this.Address.Name = "Address";
             // 
             // Form1
             // 
@@ -127,6 +187,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Family;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
     }
 }
 
