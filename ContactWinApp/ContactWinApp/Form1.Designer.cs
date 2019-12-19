@@ -34,6 +34,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgView = new System.Windows.Forms.DataGridView();
+            this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Family = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
@@ -67,6 +73,7 @@
             this.Refresh.Name = "Refresh";
             this.Refresh.Size = new System.Drawing.Size(62, 24);
             this.Refresh.Text = "Refresh";
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // groupBox1
             // 
@@ -89,13 +96,65 @@
             // 
             // dgView
             // 
+            this.dgView.AllowUserToAddRows = false;
+            this.dgView.AllowUserToDeleteRows = false;
             this.dgView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ContactID,
+            this.FirstName,
+            this.Family,
+            this.Email,
+            this.Mobile,
+            this.Age});
             this.dgView.Location = new System.Drawing.Point(6, 22);
             this.dgView.Name = "dgView";
+            this.dgView.ReadOnly = true;
             this.dgView.RowTemplate.Height = 24;
             this.dgView.Size = new System.Drawing.Size(754, 332);
             this.dgView.TabIndex = 0;
+            // 
+            // ContactID
+            // 
+            this.ContactID.DataPropertyName = "ContactID";
+            this.ContactID.HeaderText = "کد";
+            this.ContactID.Name = "ContactID";
+            this.ContactID.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "Name";
+            this.FirstName.HeaderText = "نام";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // Family
+            // 
+            this.Family.DataPropertyName = "Family";
+            this.Family.HeaderText = "نام خانوادگی";
+            this.Family.Name = "Family";
+            this.Family.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "ایمیل";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Mobile
+            // 
+            this.Mobile.DataPropertyName = "Mobile";
+            this.Mobile.HeaderText = "موبایل";
+            this.Mobile.Name = "Mobile";
+            this.Mobile.ReadOnly = true;
+            // 
+            // Age
+            // 
+            this.Age.DataPropertyName = "Age";
+            this.Age.HeaderText = "سن";
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
             // 
             // Form1
             // 
@@ -127,6 +186,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Family;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
     }
 }
 
