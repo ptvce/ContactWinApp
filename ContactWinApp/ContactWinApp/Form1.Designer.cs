@@ -35,7 +35,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgView = new System.Windows.Forms.DataGridView();
             this.ContactID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Family = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +102,7 @@
             this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ContactID,
-            this.FirstName,
+            this.FName,
             this.Family,
             this.Email,
             this.Mobile,
@@ -121,12 +121,12 @@
             this.ContactID.Name = "ContactID";
             this.ContactID.ReadOnly = true;
             // 
-            // FirstName
+            // FName
             // 
-            this.FirstName.DataPropertyName = "Name";
-            this.FirstName.HeaderText = "نام";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
+            this.FName.DataPropertyName = "Name";
+            this.FName.HeaderText = "نام";
+            this.FName.Name = "FName";
+            this.FName.ReadOnly = true;
             // 
             // Family
             // 
@@ -151,7 +151,7 @@
             // 
             // Age
             // 
-            this.Age.DataPropertyName = "Age";
+            this.Age.DataPropertyName = "age";
             this.Age.HeaderText = "سن";
             this.Age.Name = "Age";
             this.Age.ReadOnly = true;
@@ -187,7 +187,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Family;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
