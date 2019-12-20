@@ -15,6 +15,7 @@ namespace ContactWinApp
     public partial class Form1 : Form
     {
         IContactRepository repository;
+        
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +44,42 @@ namespace ContactWinApp
         private void Refresh_Click(object sender, EventArgs e)
         {
             DataBind();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            if (dgView.CurrentRow != null)
+            {
+                int contactID = Convert.ToInt32(dgView.CurrentRow.Cells[0].Value);
+                string name = dgView.CurrentRow.Cells[1].Value.ToString();
+                string family = dgView.CurrentRow.Cells[2].Value.ToString();
+                string fullName = name + " " + family;
+                if (MessageBox.Show($"آیا از حذف {fullName} مورد نظر مطمئن هستید؟","اطلاعات",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    bool isSuccess = repository.Delete(contactID);
+                    if (isSuccess)
+                    {
+                        MessageBox.Show("آیتم مورد نظر با موفقیت حذف شد","موفقیت",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        DataBind();
+                    }
+                    else
+                        MessageBox.Show("آیتم مورد نظرحذف نشد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            if (dgView.CurrentRow != null)
+            {
+                int contactID = Convert.ToInt32(dgView.CurrentRow.Cells[0].Value);
+                AddOrEdit frm = new AddOrEdit();
+                frm.contactID = contactID;
+                if (frm.ShowDialog() == DialogResult.OK)
+                    DataBind();
+
+            }
         }
     }
 }

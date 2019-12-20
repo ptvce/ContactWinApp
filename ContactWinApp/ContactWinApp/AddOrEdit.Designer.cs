@@ -172,6 +172,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "AddOrEdit";
+            this.Load += new System.EventHandler(this.AddOrEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

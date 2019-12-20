@@ -15,6 +15,7 @@ namespace ContactWinApp
     public partial class AddOrEdit : Form
     {
         IContactRepository repository;
+        public int contactID = 0;
         public AddOrEdit()
         {
             InitializeComponent();
@@ -25,15 +26,26 @@ namespace ContactWinApp
         {
             if (ValidateInput())
             {
-               bool isSuccess = repository.Insert(txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text, txtAddress.Text, txtAddress.Text);
+                bool isSuccess = false;
+                if (contactID == 0)
+                {
+                     isSuccess = repository.Insert(txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text, txtAge.Text, txtAddress.Text);
+                    
+                }
+                else
+                {
+                     isSuccess = repository.Update(contactID,txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text,txtAge.Text, txtAddress.Text);
+
+                }
                 if (isSuccess)
                 {
                     MessageBox.Show("عملیات با موفقیت انجام شد", "موفقیت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DialogResult = DialogResult.OK;
                 }
-                else {
+                else
+                {
                     MessageBox.Show("عملیات با شکست مواجه شد", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                }
             }
         }
 
@@ -70,6 +82,23 @@ namespace ContactWinApp
             }
             
             return true;
+        }
+
+        private void AddOrEdit_Load(object sender, EventArgs e)
+        {
+            if (contactID == 0)
+                this.Text = "افزودن شخص جدید";
+            else
+            {
+                this.Text = "ویرایش شخص جدید";
+                DataTable dt = repository.SelectRow(contactID);
+                txtName.Text = dt.Rows[0][1].ToString();
+                txtFamily.Text = dt.Rows[0][2].ToString();
+                txtMobile.Text = dt.Rows[0][5].ToString();
+                txtEmail.Text = dt.Rows[0][3].ToString();
+                txtAge.Text = dt.Rows[0][6].ToString();
+                txtAddress.Text = dt.Rows[0][4].ToString();
+            }
         }
     }
 }

@@ -41,8 +41,8 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.Edit = new System.Windows.Forms.ToolStripButton();
+            this.Delete = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
@@ -53,8 +53,8 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Add,
-            this.toolStripButton1,
-            this.toolStripButton2,
+            this.Edit,
+            this.Delete,
             this.Refresh});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -161,23 +161,25 @@
             this.Age.Name = "Age";
             this.Age.ReadOnly = true;
             // 
-            // toolStripButton1
+            // Edit
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(39, 24);
-            this.toolStripButton1.Text = "Edit";
+            this.Edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(39, 24);
+            this.Edit.Text = "Edit";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
             // 
-            // toolStripButton2
+            // Delete
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(57, 24);
-            this.toolStripButton2.Text = "Delete";
+            this.Delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(57, 24);
+            this.Delete.Text = "Delete";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Form1
             // 
@@ -215,8 +217,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mobile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton Edit;
+        private System.Windows.Forms.ToolStripButton Delete;
     }
 }
 
