@@ -14,12 +14,12 @@ namespace ContactWinApp
 {
     public partial class AddOrEdit : Form
     {
-        IContactRepository repository;
+        IEFContactRepository repository;
         public int contactID = 0;
         public AddOrEdit()
         {
             InitializeComponent();
-            repository = new ContactRepository();
+            repository = new EFContactRepository();
         }
 
         private void Save_Click(object sender, EventArgs e)
@@ -29,12 +29,12 @@ namespace ContactWinApp
                 bool isSuccess = false;
                 if (contactID == 0)
                 {
-                     isSuccess = repository.Insert(txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text, txtAge.Text, txtAddress.Text);
+                     isSuccess = repository.EFInsert(txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text, txtAge.Text, txtAddress.Text);
                     
                 }
                 else
                 {
-                     isSuccess = repository.Update(contactID,txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text,txtAge.Text, txtAddress.Text);
+                     isSuccess = repository.EFUpdate(contactID,txtName.Text, txtFamily.Text, txtMobile.Text, txtEmail.Text,txtAge.Text, txtAddress.Text);
 
                 }
                 if (isSuccess)
@@ -91,13 +91,14 @@ namespace ContactWinApp
             else
             {
                 this.Text = "ویرایش شخص جدید";
-                DataTable dt = repository.SelectRow(contactID);
-                txtName.Text = dt.Rows[0][1].ToString();
-                txtFamily.Text = dt.Rows[0][2].ToString();
-                txtMobile.Text = dt.Rows[0][5].ToString();
-                txtEmail.Text = dt.Rows[0][3].ToString();
-                txtAge.Text = dt.Rows[0][6].ToString();
-                txtAddress.Text = dt.Rows[0][4].ToString();
+
+                MyContact c = repository.EFSelectRow(contactID);
+                txtName.Text = c.Name.ToString();
+                txtFamily.Text = c.Family.ToString();
+                txtMobile.Text = c.Mobile.ToString();
+                txtEmail.Text = c.Email.ToString();
+                txtAge.Text = c.Age.ToString();
+                txtAddress.Text = c.Address.ToString();
             }
         }
     }

@@ -14,12 +14,12 @@ namespace ContactWinApp
 {
     public partial class Form1 : Form
     {
-        IContactRepository repository;
+        IEFContactRepository repository;
         
         public Form1()
         {
             InitializeComponent();
-            repository = new ContactRepository();
+            repository = new EFContactRepository();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +30,9 @@ namespace ContactWinApp
         public void DataBind()
         {
             dgView.AutoGenerateColumns = false;
-           dgView.DataSource = repository.SelectAll();
+            // dgView.DataSource = repository.SelectAll();
+            dgView.DataSource = repository.EFSelectAll();
+
         }
 
         private void Add_Click(object sender, EventArgs e)
@@ -56,7 +58,7 @@ namespace ContactWinApp
                 string fullName = name + " " + family;
                 if (MessageBox.Show($"آیا از حذف {fullName} مورد نظر مطمئن هستید؟","اطلاعات",MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    bool isSuccess = repository.Delete(contactID);
+                    bool isSuccess = repository.EFDelete(contactID);
                     if (isSuccess)
                     {
                         MessageBox.Show("آیتم مورد نظر با موفقیت حذف شد","موفقیت",MessageBoxButtons.OK,MessageBoxIcon.Information);

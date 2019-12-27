@@ -14,5 +14,6 @@ namespace ContactWinApp.Repository
         bool Insert(string name, string family, string mobile, string email, string age, string address);
         bool Update(int contactId, string name, string family, string mobile, string email, string age, string address);
         bool Delete(int contactId);
+
     }
 }
